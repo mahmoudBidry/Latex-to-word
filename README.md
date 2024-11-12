@@ -51,7 +51,8 @@ Install the dependencies with:
    - Apply the designated font and size across the entire Word document.
 3. The output Word document (`.docx`) will be saved in the same directory as your LaTeX file.
 
-## Notes
+## NotesHere’s the additional sentence to add to your README.md:
+
 
 - Ensure image paths in the LaTeX document are correct for accurate embedding in the Word output.
 - The notebook converts tables to a bordered format for clarity.
@@ -60,3 +61,5 @@ Install the dependencies with:
 ## License
 
 This notebook is released under the MIT License.
+
+> **Note:** The cleaner and more standardized your LaTeX code, the more accurate the Word conversion will be.
