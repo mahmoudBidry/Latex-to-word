@@ -1,21 +1,62 @@
 # LaTeX to Word Converter
 
-This Jupyter Notebook provides a streamlined solution for converting LaTeX files (`.tex`) to Word documents (`.docx`). The converter supports the following features:
+This Jupyter Notebook provides a streamlined solution for converting LaTeX files (`.tex`) into Word documents (`.docx`). The conversion preserves essential elements, such as images, tables, and consistent text formatting, making it easier to produce a polished Word document from a LaTeX source.
 
-- **Image Support**: Integrates images from the LaTeX document into the Word output, maintaining the same paths to ensure images appear in the Word document as they do in LaTeX.
-- **Table Conversion**: Converts LaTeX tables into Word tables with bordered cells, improving readability and aligning with Word formatting standards.
-- **Text Formatting**: Sets the entire Word document to a consistent font style (Times New Roman) and size (12 pt), ensuring a professional and uniform appearance.
+## Features
+
+- **Image Integration**: Incorporates images from the LaTeX file into the Word document, maintaining the original image paths for accurate rendering.
+- **Table Conversion**: Transforms LaTeX tables into bordered Word tables, enhancing readability and maintaining table structure.
+- **Text Formatting**: Formats the entire document in Times New Roman, 12 pt font for a cohesive and professional appearance.
+- **Reference Formatting**: Supports reference formatting through an IEEE citation style (`ieee.csl`). For other citation styles, you can download the appropriate `.csl` file from the [CSL GitHub Repository](https://github.com/citation-style-language/styles) and replace `ieee.csl` with the desired style file.
 
 ## Requirements
 
-Ensure the following Python libraries are installed to run this notebook:
+Ensure the following Python libraries are installed:
 
 - `pypandoc`
 - `python-docx`
-- `pandas` (for table handling)
-- `re` (for text processing)
+- `re`
 
-You can install the dependencies via pip:
+Install the dependencies with:
 
 ```bash
-pip install pypandoc python-docx pandas
+!wget https://github.com/jgm/pandoc/releases/download/3.1.6.1/pandoc-3.1.6.1-1-amd64.deb
+!dpkg -i pandoc-3.1.6.1-1-amd64.deb
+
+!pip install python-docx
+
+
+## Usage
+
+### Step 1: Set Up Your Google Drive Folder Structure
+
+1. Organize your project in Google Drive with the same folder structure you used in Overleaf, including the `.tex` file, `.bib` file, images, and the citation style file (`.csl`).
+2. Adapt the following four lines in the notebook to match your project folder and file names:
+
+   ```python
+   latex_dir = "your_drive_folder_path/"
+   csl_file = os.path.join(latex_dir, "ieee.csl")  # Change 'ieee.csl' if using a different citation style
+   tex_file = os.path.join(latex_dir, "paper.tex") # Change 'paper.tex' to your LaTeX file name
+   bib_file = os.path.join(latex_dir, "sample.bib") # Change 'sample.bib' to your bibliography file name
+   ```
+
+   Ensure these paths point to the correct directory and files on your Google Drive.
+
+### Step 2: Run the Notebook
+
+1. Place your LaTeX (`.tex`) file, bibliography (`.bib`) file, `ieee.csl` (or other citation style file), and any associated images in the Google Drive directory specified.
+2. Run the notebook, which will:
+   - Parse and convert LaTeX content (text, images, and tables) into Word.
+   - Modify table structures to ensure consistent borders and alignment.
+   - Apply the designated font and size across the entire Word document.
+3. The output Word document (`.docx`) will be saved in the same directory as your LaTeX file.
+
+## Notes
+
+- Ensure image paths in the LaTeX document are correct for accurate embedding in the Word output.
+- The notebook converts tables to a bordered format for clarity.
+- Font adjustments (Times New Roman, 12 pt) apply uniformly across all document content.
+
+## License
+
+This notebook is released under the MIT License.
