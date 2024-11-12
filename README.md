@@ -24,6 +24,7 @@ Install the dependencies with:
 !dpkg -i pandoc-3.1.6.1-1-amd64.deb
 
 !pip install python-docx
+```
 
 
 ## Usage
@@ -49,17 +50,10 @@ Install the dependencies with:
    - Parse and convert LaTeX content (text, images, and tables) into Word.
    - Modify table structures to ensure consistent borders and alignment.
    - Apply the designated font and size across the entire Word document.
-3. The output Word document (`.docx`) will be saved in the same directory as your LaTeX file.
+3. The output Word document (`output_with_borders.docx`) will be saved in the same directory as your LaTeX file.
 
-## NotesHere’s the additional sentence to add to your README.md:
-
-
-- Ensure image paths in the LaTeX document are correct for accurate embedding in the Word output.
-- The notebook converts tables to a bordered format for clarity.
-- Font adjustments (Times New Roman, 12 pt) apply uniformly across all document content.
+> **Note:** The cleaner and more standardized your LaTeX code, the more accurate the Word conversion will be.
 
 ## License
 
 This notebook is released under the MIT License.
-
-> **Note:** The cleaner and more standardized your LaTeX code, the more accurate the Word conversion will be.
